@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Registration Page</title>
+    <link rel="stylesheet" href="lib/bootstrap-3.3.7.css">
+    <link rel="stylesheet" href="profile.css">
+</head>
+<body>
+
+<!-- registration form -->
+<div class="center-block form-container-style border-gray" id="register-id">
+    <div class="form-style">
+        <div class="title-style">
+            <span>Registration</span>
+            <a href="index.html"><img src="logo.png" class="img img-rounded pull-right logo"></a>
+        </div>
+        <form onsubmit="return register()"><!-- NOTE must return register() to not submit on error -->
+            <label for="name-id" class="field-label-style">Login name</label>
+            <input id="name-id" type="text" class="field-style" placeholder="your screen name" required>
+
+            <label for="pwd-id" class="field-label-style">Password</label>
+            <input id="pwd-id" type="password" class="field-style" placeholder="1234passwOrd" required>
+            <label for="pwd-confirm-id" class="field-label-style">Confirm Password</label>
+            <input id="pwd-confirm-id" type="password" class="field-style" placeholder="confirm password" required>
+
+            <label for="email-id" class="field-label-style">Email</label>
+            <input id="email-id" type="email" class="field-style" placeholder="foo@bar.com">
+
+            <label for="country-id" class="field-label-style">Country</label>
+            <select id="country-id" class="combo" onchange="countryChanged(event)">
+                <option value="US">US</option>
+                <option value="China">China</option>
+                <option value="Canada">Canada</option>
+            </select>
+
+            <label for="state-id" class="field-label-style">State</label>
+            <select id="state-id" class="combo" onchange="stateChange(event)">
+                <option value="CA">California</option>
+                <option value="NV">Nevada</option>
+                <option value="OR">Oregon</option>
+            </select><br/>
+
+            <label for="city-id" class="field-label-style">City</label>
+            <select id="city-id" class="combo-city">
+                <option value="">San Francisco</option>
+                <option value="1">San Jose</option>
+                <option value="2">Los Angles</option>
+            </select><br/>
+
+            <label class="field-label-style">Gender</label>
+            <input type="radio" name="gender" value="male">Male
+            <input type="radio" name="gender" value="female" checked>Female<br/>
+
+            <!--<label for="agree-id" class="field-label-style">Agree</label>-->
+            <input type="checkbox" id="agree-id">Agree to terms
+
+            <!--<button class="field-style signup-style">Register</button>-->
+            <input type="submit" class="field-style signup-style" value="Register">
+        </form>
+    </div>
+
+</div>
+
+<!-- confirmation page: initially hidden -->
+<div class="center-block form-container-style border-gray" id="summary-id">
+    <div class="confirm-div">
+        <div class="title-confirm">
+            <span>Confirm your registration</span>
+            <a href="index.html"><img src="logo.png" class="img img-rounded pull-right logo"></a>
+        </div>
+        <div>
+            <p class="field-confirm"></p>
+            <p class="field-confirm"></p>
+            <p class="field-confirm"></p>
+            <p class="field-confirm"></p>
+            <p class="field-confirm"></p>
+            <p class="field-confirm"></p>
+            <p class="field-confirm"></p>
+        </div>
+        <a href="login.html" class="pull-right">Log in</a>
+    </div>
+</div>
+
+<script src="register.js"></script>
+<script>
+   //hide summary page first
+   document.getElementById('summary-id').style.display = 'none';
+</script>
+</body>
+</html>

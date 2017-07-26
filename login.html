@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="ATC">
+    <meta name="description" content="A CodeGarage class full-stack project using M E A N framework">
+    <meta name="keyword" content="shopping gadgets MEAN javascript HTML CSS Angular Bootstrap">
+    <title>Log in page</title>
+    <link rel="stylesheet" href="lib/bootstrap-3.3.7.css">
+    <link rel="stylesheet" href="profile.css">
+</head>
+<body>
+
+<div class="center-block form-container-style border-gray">
+    <div class="form-style">
+        <div class="title-style">
+            <span>Log in</span>
+            <a href="index.html"><img src="logo.png" class="img img-rounded pull-right logo"></a>
+        </div>
+        <form onsubmit="return login()">
+            <label for="email-id" class="field-label-style">Email</label>
+            <input id="email-id" type="email" class="field-style" placeholder="foo@bar.com">
+            <label for="pwd-id" class="field-label-style">Password</label>
+            <input id="pwd-id" type="password" class="field-style" placeholder="1234passwOrd">
+            <input type="submit" class="field-style signup-style white" value="Log in">
+            <div class="forget-pwd-style">
+                <a href="reset-password.html">Forget password?</a>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="center-block have-account-style gray">
+    <span>Don't have an account? <a href="register.html">Register new account</a></span>
+</div>
+
+<div id="msg-dlg-id">
+    <h3>Sorry! you are not registered!</h3><br/>
+
+    <h4>Please click link below to register first.</h4>
+    <br/><br/>
+
+    <a href="register.html">Register new account</a><br/>
+</div>
+
+</body>
+<script src="register.js"></script>
+<script>
+    //check if cookies contain user, if yes, go straight to home page
+    console.log(document.cookie);
+    var usr_email = getCookieValue("user-email");
+    var pwd = getCookieValue('password');//an extra space was added to each key after the first one TODO????????
+    if (usr_email === "abc@abc.com" && pwd === "abc") {//user not in cookie
+       window.location = "home.html";
+    }
+</script>
+</html>
